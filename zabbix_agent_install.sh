@@ -2,6 +2,7 @@ apt install lsb-release -y
 
 if [ -n $1 ]; then
 agent_config="# This is a configuration file for Zabbix agent daemon (Unix)
+PidFile=/run/zabbix/zabbix_agentd.pid
 LogFile=/var/log/zabbix-agent/zabbix_agentd.log
 LogFileSize=0
 
