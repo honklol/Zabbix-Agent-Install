@@ -20,12 +20,12 @@ function update {
 }
 
 function install {
-  apt install zabbix-agent2 zabbix-agent2-plugin-* > /dev/null
+  apt-get install zabbix-agent2 zabbix-agent2-plugin-* > /dev/null
   echo "Installed Zabbix Agent 2 packages."
 }
 
 function enable {
-  systemctl enable --now zabbix-agent2 > /dev/null
+  systemctl enable -q --now zabbix-agent2 > /dev/null
   echo "Started Zabbix Agent 2."
 }
 
@@ -35,7 +35,7 @@ function configure {
 }
 
 function restart {
-  systemctl restart zabbix-agent2
+  systemctl restart -q zabbix-agent2
   echo "Restarted service Zabbix Agent 2"
 }
 
