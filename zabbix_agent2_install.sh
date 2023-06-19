@@ -13,6 +13,7 @@ else
 fi
 
 ip=$(ip -o route get to 1.1.1.1 | sed -n 's/.*src \([0-9.]\+\).*/\1/p')
+hostname=$(cat /etc/hostname)
 
 function update {
   apt-get update -y > /dev/null
@@ -26,7 +27,7 @@ function install {
 
 function enable {
   systemctl enable -q --now zabbix-agent2 > /dev/null
-  echo "Started Zabbix Agent 2."
+  echo "Started service Zabbix Agent 2."
 }
 
 function configure {
@@ -73,4 +74,4 @@ fi
 configure
 restart
 
-echo "Success! Zabbix Agent 2 has been installed on your system. Your primary IP is $ip."
+echo "Success! Zabbix Agent 2 has been installed on your system. Your primary IP is $ip and the hostname is $hostname."
