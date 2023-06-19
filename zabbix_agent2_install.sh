@@ -40,13 +40,13 @@ function restart {
 }
 
 function repo22 {
-  wget https://repo.zabbix.com/zabbix/6.5/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.5-1+ubuntu22.04_all.deb > /dev/null
+  wget -q https://repo.zabbix.com/zabbix/6.5/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.5-1+ubuntu22.04_all.deb
   dpkg -i zabbix-release_6.5-1+ubuntu22.04_all.deb > /dev/null
   echo "Imported the Zabbix 7.0 Pre-Release repository."
 }
 
 function repo20 {
-  wget https://repo.zabbix.com/zabbix/6.5/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.5-1+ubuntu20.04_all.deb
+  wget -q https://repo.zabbix.com/zabbix/6.5/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.5-1+ubuntu20.04_all.deb
   dpkg -i zabbix-release_6.5-1+ubuntu22.04_all.deb
   echo "Imported the Zabbix 7.0 Pre-Release repository."
 }
